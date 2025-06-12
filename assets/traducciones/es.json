@@ -1,0 +1,54 @@
+{
+  "appName": "EPEBANK",
+  "slogan": "Tu banco digital",
+  "navigation": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "login": "Acceso",
+    "register": "Registro"
+  },
+  "home": {
+    "heroTitle": "Banca 100% digital pensada para ti",
+    "heroSubtitle": "Abra su cuenta en minutos y comience a disfrutar de todos los beneficios",
+    "openAccount": "Abrir cuenta",
+    "learnMore": "Conocer más",
+    "whyChoose": "¿Por qué elegir EPEBANK?",
+    "features": {
+      "noFees": "Sin comisiones",
+      "noFeesDesc": "Cuenta sin comisiones de administración ni mantenimiento",
+      "mobileApp": "App móvil",
+      "mobileAppDesc": "Controla tus finanzas desde nuestro app disponible 24/7",
+      "security": "Seguridad",
+      "securityDesc": "Tus fondos protegidos con las máximas medidas de seguridad"
+    }
+  },
+  "login": {
+    "title": "Acceso a clientes",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Acceder",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes una cuenta?",
+    "registerHere": "Regístrate aquí"
+  },
+  "register": {
+    "title": "Regístrate en EPEBANK",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "acceptTerms": "Acepto los {terms} y la {privacy}",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad",
+    "submit": "Registrarse",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "loginHere": "Inicia sesión aquí"
+  },
+  "servicesHeader": "Nuestros Servicios Financieros",
+  "contactHeader": "Contáctanos",
+  "aboutHeader": "Nosotros",
+  "openAccountBtn": "Abrir cuenta",
+  "learnMoreBtn": "Conocer más"
+}

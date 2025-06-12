@@ -1,0 +1,54 @@
+{
+  "appName": "EPEBANK",
+  "slogan": "Qankunaq digital bancayki",
+  "navigation": {
+    "home": "Qallariy",
+    "about": "Ñuqanchikmanta",
+    "services": "Yanapakuykuna",
+    "contact": "Willanakuy",
+    "login": "Yaykuy",
+    "register": "Qillqariy"
+  },
+  "home": {
+    "heroTitle": "100% digital bancayki qamapaq",
+    "heroSubtitle": "Minutupi llapallan beneficionikunata qallariy",
+    "openAccount": "Cuentata kichay",
+    "learnMore": "Astawan yachay",
+    "whyChoose": "¿Imarayku EPEBANK akllay?",
+    "features": {
+      "noFees": "Mana cuota",
+      "noFeesDesc": "Mana cuotayoq cuenta",
+      "mobileApp": "App movil",
+      "mobileAppDesc": "24/7 appwan qullqiykita kamachiy",
+      "security": "Hark'ay",
+      "securityDesc": "Qullqiyki allin hark'asqayuq"
+    }
+  },
+  "login": {
+    "title": "Clientekuna yaykuna",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Yaykuy",
+    "forgotPassword": "¿Passwordta qonqarqankichu?",
+    "noAccount": "¿Manaraq cuentayuqchu kankichu?",
+    "registerHere": "Kaypi qillqariy"
+  },
+  "register": {
+    "title": "EPEBANKpi qillqariy",
+    "fullName": "Hunt'a suti",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Passwordta confirmay",
+    "acceptTerms": "Ñuqaqa {terms} {privacy} aceptanichu",
+    "terms": "Terminosniyku",
+    "privacy": "Privacidap kamachikuynin",
+    "submit": "Qillqariy",
+    "haveAccount": "¿Ña cuentayuqchu kankichu?",
+    "loginHere": "Kaypi yaykuy"
+  },
+  "servicesHeader": "Ñuqanchik Yanapakuykuna",
+  "contactHeader": "Willanakuykuna",
+  "aboutHeader": "Ñuqanchikmanta",
+  "openAccountBtn": "Cuentata kichay",
+  "learnMoreBtn": "Astawan yachay"
+}

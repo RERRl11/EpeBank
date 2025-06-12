@@ -1,0 +1,54 @@
+{
+  "appName": "EPEBANK",
+  "slogan": "Your digital bank",
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register"
+  },
+  "home": {
+    "heroTitle": "100% digital banking designed for you",
+    "heroSubtitle": "Open your account in minutes and start enjoying all the benefits",
+    "openAccount": "Open account",
+    "learnMore": "Learn more",
+    "whyChoose": "Why choose EPEBANK?",
+    "features": {
+      "noFees": "No fees",
+      "noFeesDesc": "Account with no administration or maintenance fees",
+      "mobileApp": "Mobile app",
+      "mobileAppDesc": "Manage your finances with our 24/7 available app",
+      "security": "Security",
+      "securityDesc": "Your funds protected with maximum security measures"
+    }
+  },
+  "login": {
+    "title": "Customer Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "registerHere": "Register here"
+  },
+  "register": {
+    "title": "Register at EPEBANK",
+    "fullName": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "acceptTerms": "I accept the {terms} and the {privacy}",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "submit": "Register",
+    "haveAccount": "Already have an account?",
+    "loginHere": "Login here"
+  },
+  "servicesHeader": "Our Financial Services",
+  "contactHeader": "Contact Us",
+  "aboutHeader": "About Us",
+  "openAccountBtn": "Open account",
+  "learnMoreBtn": "Learn More"
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="appName">EPEBANK - Tu banco digital</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/imagenes/LOGO-logo2-EPEBANK.png" type="image/png" />
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 data-i18n="home.heroTitle">Banca 100% digital pensada para ti</h1>
+                <p data-i18n="home.heroSubtitle">Abra su cuenta en minutos y comience a disfrutar de todos los beneficios</p>
+                <div class="hero-buttons">
+                    <a href="registro.html" class="btn btn-primary" data-i18n="home.openAccount">Abrir cuenta</a>
+                    <a href="servicios.html" class="btn btn-outline" data-i18n="home.learnMore">Conocer más</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2 data-i18n="home.whyChoose">¿Por qué elegir EPE-BANK?</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3 data-i18n="home.features.noFees">Sin comisiones</h3>
+                    <p data-i18n="home.features.noFeesDesc">Cuenta sin comisiones de administración ni mantenimiento</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 data-i18n="home.features.mobileApp">App móvil</h3>
+                    <p data-i18n="home.features.mobileAppDesc">Controla tus finanzas desde nuestro app disponible 24/7</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="home.features.security">Seguridad</h3>
+                    <p data-i18n="home.features.securityDesc">Tus fondos protegidos con las máximas medidas de seguridad</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('includes/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    </script>
+    <script>
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/translations.js"></script>
+</body>
+</html>
