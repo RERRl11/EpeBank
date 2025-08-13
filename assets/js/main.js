@@ -1,32 +1,3 @@
-// Cargar navbar y footer
-function cargarComponentes() {
-    fetch('includes/navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
-            configurarNavbar();
-
-            // Inicializar modo oscuro después de cargar el navbar para que el botón exista
-            inicializarModoOscuro();
-
-            // Aplicar traducciones después de cargar el navbar
-            if (window.traductor) {
-                window.traductor.aplicarTraducciones();
-            }
-        });
-
-    fetch('includes/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-            configurarModalesLegales();
-            // Aplicar traducciones después de cargar el footer
-            if (window.traductor) {
-                window.traductor.aplicarTraducciones();
-            }
-        });
-}
-
 // Configurar funcionalidades del navbar
 function configurarNavbar() {
     const botonMenuMovil = document.querySelector('.mobile-menu-button');
@@ -225,8 +196,10 @@ function activarModoClaro() {
     raiz.setProperty('--color-primario', '#0056b3');
     raiz.setProperty('--color-secundario', '#003366');
     raiz.setProperty('--color-acento', '#ff6b00');
+    raiz.setProperty('--color-texto-titulos','#1a3a8f');
 
     cambiarIconoModo(false);
+    cambiarLogo(false);
     localStorage.setItem('modo-oscuro', 'false');
 }
 
@@ -238,10 +211,12 @@ function activarModoOscuro() {
     raiz.setProperty('--color-primario', '#4fc3f7');
     raiz.setProperty('--color-secundario', '#3399ff');
     raiz.setProperty('--color-acento', '#ffa65c');
+    raiz.setProperty('--color-texto-titulos','#4fc3f7');
     
-
+    cambiarLogo(true);
     cambiarIconoModo(true);
     localStorage.setItem('modo-oscuro', 'true');
+
 }
 
 // Cambia ícono del botón dependiendo si está activo el modo oscuro (true=oscuro)
@@ -254,6 +229,18 @@ function cambiarIconoModo(oscuroActivo) {
     } else {
         icono.classList.remove('fa-sun');
         icono.classList.add('fa-moon');
+    }
+}
+
+// Cambiar logo según modo oscuro
+function cambiarLogo(oscuroActivo) {
+    const logo = document.getElementById('logo');
+    if (logo) {
+        if (oscuroActivo) {
+            logo.src = 'assets/imagenes/LOGO2-EPEBANK-white.png';
+        } else {
+            logo.src = 'assets/imagenes/LOGO2-EPEBANK-.png';
+        }
     }
 }
 
@@ -282,13 +269,57 @@ function inicializarModoOscuro() {
     }
 }
 
+function animateNumbers() {
+    const numberElements = document.querySelectorAll('.number');
+            
+    numberElements.forEach(element => {
+        const target = parseInt(element.getAttribute('data-count'));
+        const suffix = element.textContent.includes('%') ? '%' : '';
+        const duration = 2000; // 2 segundos
+        const step = target / (duration / 16); // 60fps
+                
+        let current = 0;
+        const interval = setInterval(() => {
+        current += step;
+            if (current >= target) {
+                clearInterval(interval);
+                current = target;
+            }
+            element.textContent = Math.floor(current) + suffix;
+        }, 16);
+    });
+}
+// Ejecutar cuando el elemento esté visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateNumbers();
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.numbers-grid').forEach(grid => {
+    observer.observe(grid);
+});
+
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', async () => {
-    cargarComponentes();
     configurarSelectorIdioma();
-
+    animateNumbers();
+    configurarNavbar();
+    inicializarModoOscuro();
     // Revisar el estado inicial de conexión
     if (!navigator.onLine) {
         mostrarAlertaOffline();
+    }
+    configurarModalesLegales();
+    // Aplicar traducciones después de cargar el footer
+    if (window.traductor) {
+        window.traductor.aplicarTraducciones();
+    }
+    // Aplicar traducciones después de cargar el navbar
+    if (window.traductor) {
+        window.traductor.aplicarTraducciones();
     }
 });

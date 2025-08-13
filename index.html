@@ -7,62 +7,239 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="icon" href="assets/imagenes/LOGO-logo2-EPEBANK.png" type="image/png" />
 </head>
 <body>
-    <div id="navbar-placeholder"></div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-brand">
+                <img id="logo" src="assets/imagenes/LOGO2-EPEBANK-.png" alt="EPEBANK" data-i18n="[alt]appName">
+                <span class="sr-only" data-i18n="appName">EPEBANK</span>
+            </a>
+            <div class="navbar-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> <i data-i18n="navigation.home"> Inicio </i></a></li>
+                    <li><a href="nosotros.html" class="nav-link"><i class="fas fa-building"></i><i data-i18n="navigation.about"> Nosotros </i></a></li>
+                    <li class="dropdown">
+                        <a href="servicios.html" class="nav-link dropdown-toggle"><i class="fas fa-hand-holding-usd"></i> <i data-i18n="navigation.services"> Servicios </i><i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="servicios.html#cuentas"><i class="fas fa-piggy-bank"></i> Cuentas</a></li>
+                            <li><a href="servicios.html#tarjetas"><i class="fas fa-credit-card"></i> Tarjetas</a></li>
+                            <li><a href="servicios.html#prestamos"><i class="fas fa-hand-holding-usd"></i> Préstamos</a></li>
+                            <li><a href="servicios.html#inversiones"><i class="fas fa-chart-line"></i> Inversiones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> <i data-i18n="navigation.contact"> Contacto </i></a></li>
+                </ul>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline" data-i18n="navigation.login"><i class="fas fa-user"></i> Acceso</a>
+                    <a href="registro.html" class="btn btn-primary" data-i18n="navigation.register"><i class="fas fa-user-plus"></i> Registro</a>
+                </div>
+                <select id="language-selector" class="border border-gray-300 rounded p-2">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                    <option value="qu">QU</option>
+                </select>
+                <button id="btn-modo-oscuro" aria-label="Activar modo oscuro" title="Modo oscuro" class="btn btn-outline"><i id="icono-modo-oscuro" class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu-button md:hidden p-2">
+                <span class="block w-6 h-1 bg-gray-800 mb-1"></span>
+                <span class="block w-6 h-1 bg-gray-800 mb-1"></span>
+                <span class="block w-6 h-1 bg-gray-800"></span>
+            </button>
+        </div>
+    </nav>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1 data-i18n="home.heroTitle">Banca 100% digital pensada para ti</h1>
-                <p data-i18n="home.heroSubtitle">Abra su cuenta en minutos y comience a disfrutar de todos los beneficios</p>
-                <div class="hero-buttons">
-                    <a href="registro.html" class="btn btn-primary" data-i18n="home.openAccount">Abrir cuenta</a>
-                    <a href="servicios.html" class="btn btn-outline" data-i18n="home.learnMore">Conocer más</a>
+        <section id="hero" class="hero-section bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 text-center">
+            <div class="max-w-2xl mx-auto">
+                <h1 class="text-4xl mb-4" data-i18n="home.heroTitle">Banca 100% digital pensada para ti</h1>
+                <p class="text-lg mb-8" data-i18n="home.heroSubtitle">Abra su cuenta en minutos y comience a disfrutar de todos los beneficios</p>
+                <div class="flex justify-center gap-4">
+                    <a href="registro.html" class="btn btn-primary px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" data-i18n="home.openAccount">Abrir cuenta</a>
+                    <a href="servicios.html" class="btn btn-outline px-6 py-2 border border-white text-white hover:bg-blue-700 rounded" data-i18n="home.learnMore">Conocer más</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features-section">
-            <h2 data-i18n="home.whyChoose">¿Por qué elegir EPE-BANK?</h2>
-            <div class="features-grid">
-                <article class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3 data-i18n="home.features.noFees">Sin comisiones</h3>
+        <section id="features" class="features-section py-16">
+            <h2 class="text-3xl text-center mb-10" data-i18n="home.whyChoose">¿Por qué elegir EPE-BANK?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <article class="feature-card bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg p-6 shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="feature-icon text-4xl mb-4">💳</div>
+                    <h3 class="text-xl mb-2" data-i18n="home.features.noFees">Sin comisiones</h3>
                     <p data-i18n="home.features.noFeesDesc">Cuenta sin comisiones de administración ni mantenimiento</p>
                 </article>
-                <article class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 data-i18n="home.features.mobileApp">App móvil</h3>
+                <article class="feature-card bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg p-6 shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="feature-icon text-4xl mb-4">📱</div>
+                    <h3 class="text-xl mb-2" data-i18n="home.features.mobileApp">App móvil</h3>
                     <p data-i18n="home.features.mobileAppDesc">Controla tus finanzas desde nuestro app disponible 24/7</p>
                 </article>
-                <article class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3 data-i18n="home.features.security">Seguridad</h3>
+                <article class="feature-card bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg p-6 shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="feature-icon text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl mb-2" data-i18n="home.features.security">Seguridad</h3>
                     <p data-i18n="home.features.securityDesc">Tus fondos protegidos con las máximas medidas de seguridad</p>
                 </article>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer-container max-w-6xl mx-auto py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="footer-section">
+                <h3 data-i18n="appName">EPEBANK</h3>
+                <p>El banco digital de los peruanos</p>
+                <div class="social-links flex space-x-4 mt-4">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="bg-white text-blue-600 rounded-full p-2 hover:bg-blue-100"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="bg-white text-blue-600 rounded-full p-2 hover:bg-blue-100"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="bg-white text-blue-600 rounded-full p-2 hover:bg-blue-100"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="bg-white text-blue-600 rounded-full p-2 hover:bg-blue-100"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="bg-white text-blue-600 rounded-full p-2 hover:bg-blue-100"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
 
-    <div id="footer-placeholder"></div>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="servicios.html#cuentas" class="hover:underline">Cuentas bancarias</a></li>
+                    <li><a href="servicios.html#tarjetas" class="hover:underline">Tarjetas</a></li>
+                    <li><a href="servicios.html#prestamos" class="hover:underline">Préstamos</a></li>
+                    <li><a href="servicios.html#inversiones" class="hover:underline">Inversiones</a></li>
+                </ul>
+            </div>
 
-    <script>
-        fetch('includes/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    </script>
-    <script>
-        fetch('includes/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#" data-i18n="register.terms" data-modal="terms" class="hover:underline">Términos y condiciones</a></li>
+                    <li><a href="#" data-i18n="register.privacy" data-modal="privacy" class="hover:underline">Política de privacidad</a></li>
+                    <li><a href="#" data-modal="data" class="hover:underline">Protección de datos</a></li>
+                    <li><a href="#" data-modal="legal" class="hover:underline">Información legal</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <address>
+                    Av. Javier Prado 1234<br>
+                    San Isidro, Lima<br>
+                    <a href="tel:+5112345678" class="hover:underline">(01) 234-5678</a><br>
+                    <a href="mailto:info@epebank.com" class="hover:underline">info@epebank.com</a>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center py-4 border-t border-white/30">
+            <p>&copy; 2025 EPEBANK. Todos los derechos reservados.</p>
+            <p>Entidad supervisada por la SBS del Perú. | N° de registro: 1234-5678-9012</p>
+        </div>
+
+        <!-- Modales Legales -->
+        <div id="terms-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Términos y Condiciones</h2>
+                <div class="modal-body">
+                    <h3>1. Aceptación de los Términos</h3>
+                    <p>Al utilizar los servicios de EPEBANK, usted acepta cumplir con estos términos y condiciones, así como con nuestra Política de Privacidad.</p>
+                    
+                    <h3>2. Servicios Bancarios</h3>
+                    <p>EPEBANK ofrece servicios financieros digitales sujetos a la regulación peruana. Todos los productos están aprobados por la SBS.</p>
+                    
+                    <h3>3. Uso Adecuado</h3>
+                    <p>El cliente se compromete a usar los servicios de forma legal y sin fines fraudulentos.</p>
+                    
+                    <h3>4. Modificaciones</h3>
+                    <p>EPEBANK se reserva el derecho de modificar estos términos, notificando con 30 días de anticipación.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="privacy-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Política de Privacidad</h2>
+                <div class="modal-body">
+                    <h3>1. Recopilación de Datos</h3>
+                    <p>Recopilamos información necesaria para brindar servicios financieros, incluyendo datos personales y transaccionales.</p>
+                    
+                    <h3>2. Uso de la Información</h3>
+                    <p>Sus datos se usan para: (a) Procesar transacciones, (b) Cumplir con la ley, (c) Mejorar nuestros servicios.</p>
+                    
+                    <h3>3. Protección de Datos</h3>
+                    <p>Implementamos medidas de seguridad SSL, encriptación y controles de acceso para proteger su información.</p>
+                    
+                    <h3>4. Derechos ARCO</h3>
+                    <p>Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales.</p>
+                </div>
+            </div>
+        </div>
+        <div id="data-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Protección de Datos Personales</h2>
+                <div class="modal-body">
+                    <h3>1. Responsable del Tratamiento</h3>
+                    <p>EPEBANK S.A., con RUC 20123456789, con domicilio en Av. Javier Prado 1234, San Isidro, Lima, Perú, es responsable del tratamiento de sus datos personales.</p>
+                    
+                    <h3>2. Finalidad del Tratamiento</h3>
+                    <p>Sus datos personales serán utilizados para: (a) Gestión de productos y servicios financieros, (b) Cumplimiento de obligaciones legales, (c) Análisis de riesgos y prevención de fraudes.</p>
+                    
+                    <h3>3. Derechos ARCO</h3>
+                    <p>Usted tiene derecho a:</p>
+                    <ul>
+                        <li><strong>Acceder</strong> a sus datos personales</li>
+                        <li><strong>Rectificar</strong> datos inexactos</li>
+                        <li><strong>Cancelar</strong> el uso de sus datos</li>
+                        <li><strong>Oponerse</strong> al tratamiento de sus datos</li>
+                    </ul>
+                    
+                    <h3>4. Seguridad de la Información</h3>
+                    <p>Implementamos medidas técnicas y organizativas para garantizar la seguridad de sus datos, conforme a la Ley Peruana de Protección de Datos Personales (Ley N° 29733).</p>
+                    
+                    <h3>5. Ejercicio de Derechos</h3>
+                    <p>Para ejercer sus derechos, escriba a proteccion.datos@epebank.com o presente su solicitud en cualquiera de nuestras oficinas.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="legal-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Información Legal</h2>
+                <div class="modal-body">
+                    <h3>1. Razón Social</h3>
+                    <p><strong>EPEBANK S.A.</strong><br>
+                    RUC: 20123456789<br>
+                    Inscrito en Registros Públicos: Ficha 123456, Asiento 789</p>
+                    
+                    <h3>2. Supervisión</h3>
+                    <p>Entidad supervisada por la Superintendencia de Banca, Seguros y AFP (SBS) del Perú.<br>
+                    N° de registro en SBS: 987654321</p>
+                    
+                    <h3>3. Garantías</h3>
+                    <p>Los depósitos están garantizados por el Fondo de Seguro de Depósitos hasta por S/ 115,420 (ciento quince mil cuatrocientos veinte soles) por depositante, conforme a la Ley N° 26702.</p>
+                    
+                    <h3>4. Régimen Legal</h3>
+                    <p>Nuestras operaciones se rigen por:<br>
+                    - Ley General del Sistema Financiero (Ley N° 26702)<br>
+                    - Ley de Protección al Consumidor (Ley N° 29571)<br>
+                    - Ley de Transparencia de Información Financiera (Ley N° 28587)</p>
+                    
+                    <h3>5. Defensoría del Cliente</h3>
+                    <p>Si tiene reclamos no resueltos, puede contactar a nuestra Defensoría del Cliente:<br>
+                    Teléfono: (01) 234-5678 opción 5<br>
+                    Email: defensoria@epebank.com<br>
+                    Horario: Lunes a viernes de 9:00 a 18:00 horas</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/51987654321" class="whatsapp-button" target="_blank" aria-label="Chat en WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>    
     <script src="assets/js/main.js"></script>
     <script src="assets/js/translations.js"></script>
 </body>

@@ -11,7 +11,7 @@ class Translator {
     // Cargar traducciones
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`/assets/traducciones/${lang}.json`);
+            const response = await fetch(`assets/traducciones/${lang}.json`);
             if (!response.ok) {
                 throw new Error(`Failed to load ${lang} translations`);
             }

@@ -1,6 +1,8 @@
 :root {
     --color-fondo: #f5f7fa;
     --color-texto: #212529;
+    --color-texto-titulos:#1a3a8f;
+    --color-texto-card: #212529;
     --color-primario: #0056b3;
     --color-secundario: #003366;
     --color-acento: #ff6b00;
@@ -95,6 +97,25 @@ img {
 .btn-outline:hover {
     background-color: var(--color-primario);
     color: var(--color-fondo);
+}
+
+.whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* Color de WhatsApp */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+.whatsapp-button:hover {
+            background-color: #128C7E; /* Color más oscuro al pasar el mouse */
 }
 
 /* Utility */
@@ -214,11 +235,11 @@ img {
 .feature-card h3 {
     margin-bottom: 15px;
     font-size: 1.3rem;
-    color: var(--color-texto);
+    color: var(--color-texto-card);
 }
 
 .feature-card p {
-    color: var(--color-texto);
+    color: var(--color-texto-card);
 }
 
 /* Navbar */
@@ -417,7 +438,7 @@ img {
 }
 
 .mission-content h2, .mission-values h2 {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     font-size: 2rem;
     margin-bottom: 25px;
 }
@@ -462,7 +483,7 @@ img {
 
 .value-card p{
     margin: 10px 0 0;
-    color: var(--color-texto);
+    color: var(--color-texto-card);
 }
 
 /* Timeline */
@@ -473,7 +494,7 @@ img {
 }
 
 .timeline-header h2 {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     font-size: 2rem;
     margin-bottom: 25px;
 }
@@ -482,7 +503,7 @@ img {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: var(--nav-menu-select-active);
+    background-color: var(--color-texto-titulos);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -505,7 +526,7 @@ img {
 }
 
 .timeline-year {
-    background-color: var(--color-legal);
+    background-color: var(--color-texto-titulos);
     color: #fff;
     padding: 10px 15px;
     border-radius: 30px;
@@ -539,7 +560,7 @@ img {
 
 .timeline-content p {
     margin: 10px 0 0;
-    color: var(--color-texto);
+    color: var(--color-texto-card);
 }
 
 /* Team */
@@ -552,7 +573,7 @@ img {
 }
 
 .team-header h2 {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     font-size: 2rem;
     margin-bottom: 25px;
 }
@@ -581,6 +602,10 @@ img {
     color: var(--color-legal-card);
     margin-bottom: 5px;
 }
+.team-card p {
+    color: var(--color-texto-card);
+    margin-bottom: 5px;
+}
 
 .position {
     color: var(--color-legal-card);
@@ -600,8 +625,7 @@ img {
     gap: 15px;
 }
 
-.social-links a {
-    color: var(--color-legal);
+.social-links a{
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
@@ -624,7 +648,7 @@ img {
 }
 
 .numbers-header h2 {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     font-size: 2rem;
     margin-bottom: 25px;
     text-align: center;
@@ -637,7 +661,7 @@ img {
 .number {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     margin-bottom: 10px;
 }
 
@@ -663,14 +687,9 @@ img {
 }
 
 .service-content h2 {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     font-size: 2.2rem;
     margin-bottom: 20px;
-}
-
-.service-content h2 i {
-    margin-right: 15px;
-    color: var(--nav-menu-select-active);
 }
 
 
@@ -692,7 +711,7 @@ img {
 
 .service-types h3 {
     margin: 30px 0 15px;
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
 }
 
 .types-grid {
@@ -723,6 +742,11 @@ img {
 .type-card h4 {
     margin-bottom: 10px;
     color: #1a3a8f;
+}
+
+.type-card p {
+    margin-bottom: 10px;
+    color: var(--color-texto-card);
 }
 /* Sección de Cuentas Bancarias */
 .account-comparison {
@@ -757,12 +781,20 @@ img {
     background-color: #f9fbfd;
 }
 
+.comparison-table tbody tr{
+    color: var(--color-texto-card);
+}
+
 .comparison-table i.fa-check {
     color: var(--nav-menu-select-active);
 }
 
 .comparison-table i.fa-times {
     color: var(--color-peligro);
+}
+
+.comparision-table-texto-sfondo{
+    color: var(--color-texto);
 }
 
 /* Cards */
@@ -906,13 +938,13 @@ img {
     color: var(--color-legal-card);
     margin-bottom: 10px;
 }
-.contact-details p {
+.contact-details p{
     margin: 5px 0;
-    color: var(--color-texto);
+    color: var(--color-texto-card);
 }
 
 .contact-social {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     margin-top: 40px;
 }
 
@@ -1025,7 +1057,7 @@ img {
 }
 
 .map-container h2 i {
-    color: var(--color-legal);
+    color: var(--color-texto-titulos);
     margin-right: 10px;
 }
 
@@ -1061,6 +1093,10 @@ img {
 
 .auth-form .form-group {
     margin-bottom: 25px;
+}
+
+.form-group {
+    color: var(--color-texto-card);
 }
 
 .auth-form label {
